@@ -107,7 +107,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/Applications/Racket\ v8.5/bin:$PATH"
 
-[ -f "/Users/james/.ghcup/env" ] && source "/Users/james/.ghcup/env" # ghcup-env
+#[ -f "/Users/james/.ghcup/env" ] && source "/Users/james/.ghcup/env" # ghcup-env
 
 alias iw="perl /Users/james/src/r/cli.pl $@"
 alias cf="/Users/james/temp.pl f"
@@ -121,3 +121,12 @@ alias gaa="git add *"
 alias gp="git push"
 alias aa="tail -n 20 /Users/james/.zshrc"
 alias nyc='TZ=America/New_York date'
+function cn {
+	echo "$1" > cat.txt | webme cat.txt && rm cat.txt
+}
+
+[ -f "/Users/james/.ghcup/env" ] && source "/Users/james/.ghcup/env" # ghcup-env
+
+function cvt () {
+	convert $1 -resize 50% $(openssl rand -hex 12).jpeg
+}
